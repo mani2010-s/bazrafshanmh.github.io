@@ -182,7 +182,7 @@ section.success {
 
     /* در صفحه‌های کوچک‌تر منو به صورت عمودی قرار می‌گیرد */
     .navbar .navbar-nav {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
 
