@@ -160,10 +160,13 @@ header .intro-text .skills {
 
 .navbar .navbar-nav {
     letter-spacing: 1px;
+      display: flex;
+      justify-content: flex-end;
 }
 
 .navbar .navbar-nav li a:focus {
     outline: 0;
+    margin-left: 20px;
 }
 
 .navbar-default,
