@@ -20,17 +20,17 @@
       transform: translate(50%, -55%);
     }
     #menu-items {
-      display: none; /* Hidden initially */
-      background-color: #2c3e50; /* Same color as the navbar */
-      padding: 3% 0 3% 0; /* Add some padding to the list row */
-      position: absolute; /* To dynamically adjust its position */
+      display: none; 
+      background-color: #2c3e50; 
+      padding: 8% 0 2% 0; 
+      position: absolute; 
       width: 100%;
-      z-index: 999; /* To appear above other elements */
+      z-index: 999;
     }
     .navbar {
-      background-color: #2c3e50; /* Navbar color */
+      background-color: #2c3e50; 
       border: none;
-      height: 8rem; /* Explicit height to contain content */
+      height: 8rem; 
     }
     .navbar-header {
       position: relative;
@@ -42,13 +42,13 @@
       border: none;
       font-size: 250%;
       position: absolute;
-      left: 55rem; /* Completely move the button to the right */
-      top: 50%; /* Vertically center in the navbar */
+      left: 55rem; 
+      top: 50%; 
       transform: translateY(-65%);
     }
     .menu-container ul {
-      display: flex; /* Display items in a row */
-      justify-content: center; /* Center the list items */
+      display: flex; 
+      justify-content: center;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -66,13 +66,13 @@
     }
     @media (max-width: 768px) {
       .navbar-toggle {
-        font-size: 100%; /* Adjust toggle size for smaller devices */
+        font-size: 100%; 
       }
       .navbar-brand {
-        font-size: 150%; /* Adjust brand size for smaller screens */
+        font-size: 150%; 
       }
       .menu-container ul {
-        flex-direction: column; /* Display items vertically on small devices */
+        flex-direction: column; 
       }
     }
   </style>
@@ -86,13 +86,13 @@
       <button type="button" class="btn btn-default navbar-toggle" onclick="toggleMenu()">
         <span class="glyphicon glyphicon-menu-hamburger"></span> <!-- Three-bars icon -->
       </button>
-      <!-- Navbar Brand -->
+      
       <a class="navbar-brand text-center" href="#page-top">فانوس</a>
     </div>
   </div>
 </nav>
 
-<!-- Menu Items -->
+
 <div id="menu-items" class="menu-container">
   <ul>
     <li><a href="#portfolio">غرفه‌ها</a></li>
@@ -102,9 +102,8 @@
   </ul>
 </div>
 
-
 <script>
-  // JavaScript for toggling menu visibility
+  
   function toggleMenu() {
     var menu = document.getElementById("menu-items");
     var navbar = document.querySelector(".navbar");
@@ -112,15 +111,6 @@
     menu.style.top = navbarBottom + "px"; // Position menu just below the navbar
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
-
-  // Close the menu when clicking anywhere on the page
-  document.addEventListener("click", function (event) {
-    var menu = document.getElementById("menu-items");
-    var toggleButton = document.querySelector(".navbar-toggle");
-    if (menu.style.display === "block" && !menu.contains(event.target) && event.target !== toggleButton) {
-      menu.style.display = "none"; // Hide the menu
-    }
-  });
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
