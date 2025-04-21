@@ -42,7 +42,7 @@
       border: none;
       font-size: 300%;
       position: absolute;
-      left: 55rem; /* Keep it aligned on the right for desktops */
+      left:55rem; /* Move button to the far right for all devices */
       top: 50%; /* Vertically center in the navbar */
       transform: translateY(-50%);
     }
@@ -72,7 +72,7 @@
       }
       .navbar-toggle {
         font-size: 150%; /* Adjust button size */
-        left: 10px; /* Move button to the left side for phones */
+        left: 15rem; /* Keep button on the far right for phones */
       }
       .navbar-brand {
         font-size: 150%; /* Adjust brand size */
@@ -139,6 +139,14 @@
       !menu.contains(event.target) &&
       !toggleButton.contains(event.target)
     ) {
+      menu.style.display = "none";
+    }
+  });
+
+  // Close the menu when scrolling
+  window.addEventListener("scroll", function () {
+    var menu = document.getElementById("menu-items");
+    if (menu.style.display === "block") {
       menu.style.display = "none";
     }
   });
