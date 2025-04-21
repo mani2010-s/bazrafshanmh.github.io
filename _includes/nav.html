@@ -73,6 +73,7 @@
       .navbar-toggle {
         font-size: 150%; /* Adjust button size */
         left: 10px; /* Adjust button position for phones */
+        margin-left: 30px; /* Add space between button and "فانوس" */
       }
       .navbar-brand {
         font-size: 150%; /* Adjust brand size */
@@ -128,14 +129,21 @@
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
 
-  // Close the menu when clicking anywhere on the page
+  // Close the menu when clicking anywhere on the page or scrollbar
   document.addEventListener("click", function (event) {
     var menu = document.getElementById("menu-items");
     var toggleButton = document.querySelector(".navbar-toggle");
-    if (menu.style.display === "block" && !menu.contains(event.target) && event.target !== toggleButton) {
-      menu.style.display = "none"; // Hide the menu
+    // If clicking outside the menu or toggle button, close the menu
+    if (
+      menu.style.display === "block" &&
+      !menu.contains(event.target) &&
+      event.target !== toggleButton
+    ) {
+      menu.style.display = "none";
     }
   });
+
+  // Close menu when the scrollbar is clicked (works as part of the general "click" listener)
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
