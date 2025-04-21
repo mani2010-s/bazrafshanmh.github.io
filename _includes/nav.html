@@ -11,6 +11,11 @@
     }
     .navbar-brand {
       font-family: "b yekan";
+      color: white;
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 200%;
     }
     #menu-items {
       display: none; /* Hidden initially */
@@ -19,10 +24,21 @@
       background-color: #2c3e50; /* Navbar color */
       border: none;
     }
+    .navbar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .navbar-toggle {
       color: white;
       border: none;
       font-size: 120%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    .menu-container {
+      margin-top: 70px; /* Ensure menu appears below navbar */
     }
   </style>
 </head>
@@ -32,25 +48,27 @@
     <!-- Navbar Header -->
     <div class="navbar-header">
       <!-- Menu Toggle Button -->
-      <button type="button" class="btn btn-default navbar-toggle" onclick="toggleMenu()">
+      <button type="button" class="btn btn-default navbar-toggle" onclick="toggleMenu()" style="position: relative;">
         <span class="glyphicon glyphicon-menu-hamburger"></span> <!-- Three-bars icon -->
       </button>
       <!-- Navbar Brand -->
-      <a class="navbar-brand text-center" href="#page-top">فانوس</a>
-    </div>
-
-    <!-- Menu Items -->
-    <div id="menu-items" class="collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#portfolio">غرفه‌ها</a></li>
-        <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
-        <li><a href="#photos">عکس‌ها</a></li>
-        <li><a href="#about">درباره ما</a></li>
-        <li><a href="#contact">ارتباط با ما</a></li>
-      </ul>
+      <a class="navbar-brand" href="#page-top">فانوس</a>
     </div>
   </div>
 </nav>
+
+<!-- Menu Items -->
+<div class="menu-container">
+  <div id="menu-items" class="container">
+    <ul class="nav navbar-nav navbar-right" style="list-style-type: none; margin: 0; padding: 0;">
+      <li><a href="#portfolio">غرفه‌ها</a></li>
+      <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
+      <li><a href="#photos">عکس‌ها</a></li>
+      <li><a href="#about">درباره ما</a></li>
+      <li><a href="#contact">ارتباط با ما</a></li>
+    </ul>
+  </div>
+</div>
 
 <script>
   // JavaScript for toggling menu visibility
