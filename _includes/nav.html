@@ -16,18 +16,18 @@
       right: 50%;
       transform: translateX(50%);
       font-size: 200%;
-      top: 50%; /* Vertically center in the navbar */
-      transform: translate(-50%, -50%); /* Adjust both horizontally and vertically */
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
     #menu-items {
       display: none; /* Hidden initially */
-      color:white;
+      background-color: #2c3e50; /* Same color as the navbar */
+      padding: 7% 0; /* Add some padding to the list row */
     }
     .navbar {
       background-color: #2c3e50; /* Navbar color */
       border: none;
       height: 70px; /* Explicit height to contain content */
-      opacity:1
     }
     .navbar-header {
       position: relative;
@@ -35,7 +35,6 @@
     }
     .navbar-toggle {
       color: white;
-      display:flex;
       border: none;
       font-size: 120%;
       position: absolute;
@@ -43,12 +42,32 @@
       top: 50%; /* Vertically center in the navbar */
       transform: translateY(-50%);
     }
+    .menu-container ul {
+      display: flex; /* Display items in a row */
+      justify-content: center; /* Center the list items */
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .menu-container ul li a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-family: "b yekan";
+    }
+    .menu-container ul li a:hover {
+      background-color: #34495e;
+      border-radius: 5px;
+    }
     @media (max-width: 768px) {
       .navbar-toggle {
         font-size: 100%; /* Adjust toggle size for smaller devices */
       }
       .navbar-brand {
         font-size: 150%; /* Adjust brand size for smaller screens */
+      }
+      .menu-container ul {
+        flex-direction: column; /* Display items vertically on small devices */
       }
     }
   </style>
@@ -65,18 +84,18 @@
       <!-- Navbar Brand -->
       <a class="navbar-brand text-center" href="#page-top">فانوس</a>
     </div>
-
-    <!-- Menu Items -->
-    <div id="menu-items" class="collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#portfolio">غرفه‌ها</a></li>
-        <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
-        <li><a href="#photos">عکس‌ها</a></li>
-        <li><a href="#contact">ارتباط با ما</a></li>
-      </ul>
-    </div>
   </div>
 </nav>
+
+<!-- Menu Items -->
+<div id="menu-items" class="menu-container">
+  <ul>
+    <li><a href="#portfolio">غرفه‌ها</a></li>
+    <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
+    <li><a href="#photos">عکس‌ها</a></li>
+    <li><a href="#contact">ارتباط با ما</a></li>
+  </ul>
+</div>
 
 <script>
   // JavaScript for toggling menu visibility
