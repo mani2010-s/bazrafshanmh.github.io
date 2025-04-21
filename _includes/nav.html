@@ -25,7 +25,7 @@
       padding: 3% 0 3% 0; /* Add some padding to the list row */
       position: absolute; /* To dynamically adjust its position */
       width: 100%;
-      z-index: 999; 
+      z-index: 999;
     }
     .navbar {
       background-color: #2c3e50; /* Navbar color */
@@ -42,7 +42,7 @@
       border: none;
       font-size: 300%;
       position: absolute;
-      left: 55rem; /* Keep it aligned on the right */
+      left: 55rem; /* Keep it aligned on the right for desktops */
       top: 50%; /* Vertically center in the navbar */
       transform: translateY(-50%);
     }
@@ -72,7 +72,7 @@
       }
       .navbar-toggle {
         font-size: 150%; /* Adjust button size */
-        right: 10px; /* Keep it aligned on the right */
+        left: 10px; /* Move button to the left side for phones */
       }
       .navbar-brand {
         font-size: 150%; /* Adjust brand size */
@@ -129,7 +129,7 @@
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
 
-  // Close the menu when clicking outside
+  // Close the menu when clicking anywhere on the screen or scrollbar
   document.addEventListener("click", function (event) {
     var menu = document.getElementById("menu-items");
     var toggleButton = document.querySelector(".navbar-toggle");
