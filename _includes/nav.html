@@ -22,7 +22,7 @@
     #menu-items {
       display: none; /* Hidden initially */
       background-color: #2c3e50; /* Same color as the navbar */
-      padding: 8% 0 2% 0; /* Add some padding to the list row */
+      padding: 3% 0 3% 0; /* Add some padding to the list row */
       position: absolute; /* To dynamically adjust its position */
       width: 100%;
       z-index: 999; /* To appear above other elements */
@@ -102,6 +102,7 @@
   </ul>
 </div>
 
+
 <script>
   // JavaScript for toggling menu visibility
   function toggleMenu() {
@@ -111,6 +112,15 @@
     menu.style.top = navbarBottom + "px"; // Position menu just below the navbar
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
+
+  // Close the menu when clicking anywhere on the page
+  document.addEventListener("click", function (event) {
+    var menu = document.getElementById("menu-items");
+    var toggleButton = document.querySelector(".navbar-toggle");
+    if (menu.style.display === "block" && !menu.contains(event.target) && event.target !== toggleButton) {
+      menu.style.display = "none"; // Hide the menu
+    }
+  });
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
