@@ -17,13 +17,15 @@
       transform: translateX(50%);
       font-size: 200%;
       top: 50%;
-      transform: translate(50%, -50%);
+      transform: translate(50%, -55%);
     }
     #menu-items {
       display: none; /* Hidden initially */
       background-color: #2c3e50; /* Same color as the navbar */
       padding: 8% 0 2% 0; /* Add some padding to the list row */
-      position:absolute;
+      position: absolute; /* To dynamically adjust its position */
+      width: 100%;
+      z-index: 999; /* To appear above other elements */
     }
     .navbar {
       background-color: #2c3e50; /* Navbar color */
@@ -36,7 +38,7 @@
     }
     .navbar-toggle {
       color: white !important;
-      display:flex;
+      display: flex;
       border: none;
       font-size: 250%;
       position: absolute;
@@ -56,7 +58,7 @@
       padding: 10px 15px;
       text-decoration: none;
       font-family: "b yekan";
-      font-size:150%
+      font-size: 150%;
     }
     .menu-container ul li a:hover {
       background-color: #34495e;
@@ -104,17 +106,12 @@
   // JavaScript for toggling menu visibility
   function toggleMenu() {
     var menu = document.getElementById("menu-items");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-    // JavaScript for toggling menu visibility
-  function toggleMenu() {
-    var menu = document.getElementById("menu-items");
-    var navbarHeight = document.querySelector(".navbar").offsetHeight; // Get the navbar height
-    menu.style.top = navbarHeight + "px"; // Position menu below the navbar
+    var navbar = document.querySelector(".navbar");
+    var navbarBottom = navbar.getBoundingClientRect().bottom + window.scrollY; // Calculate navbar's position
+    menu.style.top = navbarBottom + "px"; // Position menu just below the navbar
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
 </script>
-  
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
