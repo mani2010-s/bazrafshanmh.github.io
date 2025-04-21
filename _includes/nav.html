@@ -22,7 +22,7 @@
     #menu-items {
       display: none; /* Hidden initially */
       background-color: #2c3e50; /* Same color as the navbar */
-      padding: 3% 0 3% 0; /* Add some padding to the list row */
+      padding: 8% 0 2% 0; /* Add some padding to the list row */
       position: absolute; /* To dynamically adjust its position */
       width: 100%;
       z-index: 999; /* To appear above other elements */
@@ -42,10 +42,9 @@
       border: none;
       font-size: 250%;
       position: absolute;
-      right: 15px; /* Completely move the button to the right */
+      left: 55rem; /* Completely move the button to the right */
       top: 50%; /* Vertically center in the navbar */
-      transform: translateY(-50%);
-      z-index: 1000; /* Ensure button is always clickable */
+      transform: translateY(-65%);
     }
     .menu-container ul {
       display: flex; /* Display items in a row */
@@ -65,20 +64,31 @@
       background-color: #34495e;
       border-radius: 5px;
     }
+
+    /* Responsive adjustments for phones (max-width: 768px) */
     @media (max-width: 768px) {
       .navbar {
-        height: 6rem; /* Adjust navbar height for smaller screens */
+        height: 6rem; /* Reduce navbar height for smaller screens */
       }
       .navbar-toggle {
-        font-size: 150%; /* Adjust button size for smaller devices */
-        right: 10px; /* Adjust position for smaller screens */
+        font-size: 150%; /* Adjust button size */
+        left: 10px; /* Adjust button position for phones */
       }
       .navbar-brand {
-        font-size: 150%; /* Adjust brand size for smaller screens */
+        font-size: 150%; /* Adjust brand size */
+        top: 50%; /* Re-center the brand */
+        transform: translate(50%, -50%);
+      }
+      #menu-items {
+        padding: 5% 0 2% 0; /* Adjust padding for smaller screens */
       }
       .menu-container ul {
-        flex-direction: column; /* Display items vertically on small devices */
-        padding: 5px; /* Add padding for smaller screens */
+        flex-direction: column; /* Display menu items vertically */
+        padding: 10px; /* Add padding */
+      }
+      .menu-container ul li a {
+        font-size: 120%; /* Adjust font size for smaller screens */
+        padding: 8px 10px; /* Adjust padding for links */
       }
     }
   </style>
