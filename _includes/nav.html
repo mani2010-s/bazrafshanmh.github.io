@@ -22,7 +22,7 @@
     #menu-items {
       display: none; /* Hidden initially */
       background-color: #2c3e50; /* Same color as the navbar */
-      padding: 8% 0 2% 0; /* Add some padding to the list row */
+      padding: 3% 0 3% 0; /* Add some padding to the list row */
       position: absolute; /* To dynamically adjust its position */
       width: 100%;
       z-index: 999; 
@@ -42,9 +42,9 @@
       border: none;
       font-size: 250%;
       position: absolute;
-      left: 55rem; /* Completely move the button to the right */
+      right: 10px; /* Keep it aligned on the right */
       top: 50%; /* Vertically center in the navbar */
-      transform: translateY(-65%);
+      transform: translateY(-50%);
     }
     .menu-container ul {
       display: flex; /* Display items in a row */
@@ -65,15 +65,14 @@
       border-radius: 5px;
     }
 
-    /* Responsive adjustments for phones (max-width: 768px) */
+    /* Responsive adjustments for phones */
     @media (max-width: 768px) {
       .navbar {
         height: 6rem; /* Reduce navbar height for smaller screens */
       }
       .navbar-toggle {
         font-size: 150%; /* Adjust button size */
-        left: 10px; /* Adjust button position for phones */
-        margin-left: 30px; /* Add space between button and "فانوس" */
+        right: 10px; /* Keep it aligned on the right */
       }
       .navbar-brand {
         font-size: 150%; /* Adjust brand size */
@@ -124,26 +123,25 @@
   function toggleMenu() {
     var menu = document.getElementById("menu-items");
     var navbar = document.querySelector(".navbar");
-    var navbarBottom = navbar.getBoundingClientRect().bottom + window.scrollY; // Calculate navbar's position
-    menu.style.top = navbarBottom + "px"; // Position menu just below the navbar
+    var navbarBottom = navbar.getBoundingClientRect().bottom + window.scrollY;
+    
+    menu.style.top = navbarBottom + "px";
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
 
-  // Close the menu when clicking anywhere on the page or scrollbar
+  // Close the menu when clicking outside
   document.addEventListener("click", function (event) {
     var menu = document.getElementById("menu-items");
     var toggleButton = document.querySelector(".navbar-toggle");
-    // If clicking outside the menu or toggle button, close the menu
+
     if (
       menu.style.display === "block" &&
       !menu.contains(event.target) &&
-      event.target !== toggleButton
+      !toggleButton.contains(event.target)
     ) {
       menu.style.display = "none";
     }
   });
-
-  // Close menu when the scrollbar is clicked (works as part of the general "click" listener)
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
