@@ -25,8 +25,6 @@
       border: none;
     }
     .navbar-header {
-      display: flex;
-      justify-content: flex-start; /* Align header content to the start */
       position: relative;
     }
     .navbar-toggle {
@@ -34,12 +32,17 @@
       border: none;
       font-size: 120%;
       position: absolute;
-      left: 15px; /* Position the button completely on the right */
+      left: 15px; /* Completely move the button to the right */
       top: 50%;
       transform: translateY(-50%);
     }
-    .menu-container {
-      margin-top: 70px; /* Ensure menu appears below navbar */
+    @media (max-width: 768px) {
+      .navbar-toggle {
+        font-size: 100%; /* Adjust toggle size for smaller devices */
+      }
+      .navbar-brand {
+        font-size: 150%; /* Adjust brand size for smaller screens */
+      }
     }
   </style>
 </head>
@@ -55,21 +58,19 @@
       <!-- Navbar Brand -->
       <a class="navbar-brand text-center" href="#page-top">فانوس</a>
     </div>
+
+    <!-- Menu Items -->
+    <div id="menu-items" class="collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#portfolio">غرفه‌ها</a></li>
+        <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
+        <li><a href="#photos">عکس‌ها</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#contact">ارتباط با ما</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
-
-<!-- Menu Items -->
-<div class="menu-container">
-  <div id="menu-items" class="container">
-    <ul class="nav navbar-nav navbar-right" style="list-style-type: none; margin: 0; padding: 0;">
-      <li><a href="#portfolio">غرفه‌ها</a></li>
-      <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
-      <li><a href="#photos">عکس‌ها</a></li>
-      <li><a href="#about">درباره ما</a></li>
-      <li><a href="#contact">ارتباط با ما</a></li>
-    </ul>
-  </div>
-</div>
 
 <script>
   // JavaScript for toggling menu visibility
