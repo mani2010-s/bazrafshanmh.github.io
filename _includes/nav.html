@@ -9,52 +9,47 @@
         .navbar {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Align vertically */
+            align-items: center; /* Vertically align items */
         }
         .navbar-brand {
             font-family: "b yekan";
             font-size: 2rem;
             font-weight: bold;
             color: black;
-            margin: auto; /* Center horizontally in navbar */
-        }
-        .toggle-btn {
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 3rem; /* Bigger toggle button */
-            color: black;
-            margin-right: 10px; /* Add spacing on the right */
+            margin: 0 auto; /* Center horizontally */
         }
         .nav-links {
             display: flex;
-            flex-direction: row-reverse; /* RTL layout */
             list-style: none;
+            gap: 15px; /* Space between list items */
             padding: 0;
+            margin: 0;
         }
-        .nav-links li {
-            margin: 0 15px; /* Add spacing between list items */
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-family: "b yekan";
         }
-        .navbar-collapse {
-            text-align: center; /* Center alignment for links */
+        .navbar-toggler {
+            font-size: 2rem; /* Increase the size of the toggle button */
+            border: none;
+            background: none;
+            color: black;
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top bg-light">
         <div class="container">
-            <!-- Navbar header -->
-            <div class="navbar-header">
-                <!-- Three-bars Toggle Button -->
-                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nav-links" aria-expanded="false">
-                    &#9776; <!-- Three-bars icon -->
-                </button>
-                <!-- Centered Brand -->
-                <a class="navbar-brand" href="#page-top">فانوس</a>
-            </div>
-            <!-- Collapsible Content (Hidden by Default) -->
-            <div class="collapse navbar-collapse" id="nav-links">
+            <!-- Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false">
+                &#9776; <!-- Three-bars icon -->
+            </button>
+            <!-- Centered Brand -->
+            <a class="navbar-brand" href="#page-top">فانوس</a>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="nav-links">
                     <li><a href="#portfolio">غرفه‌ها</a></li>
                     <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
