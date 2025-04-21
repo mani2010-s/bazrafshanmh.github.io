@@ -1,48 +1,70 @@
-<!-- Navigation -->
-<style>
-  @font-face{
-    font-family:"b yekan";
-    src: url("../css/font-awesome/BYekan.ttf") format("TrueType");
-  }
-  .navbar-brand , .page-scroll{
-    font-family:"b yekan";
-  }
-</style>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header page-scroll" style="display: flex; flex-direction: row-reverse;">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a style="margin-right: 5%; font-size: 200%;" class="navbar-brand" href="#page-top">{{ site.title }}</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 " style="display:flex; flex-direction: row-reverse;">
-      <ul class="nav navbar-nav navbar-right" style="list-style-type: none; margin: 0; padding: 0; overflow: hidden; display:flex; flex-direction: row-reverse;">
-        <li class="hidden">
-          <a href="#page-top">فانوس</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#portfolio">غرفه‌ها</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#about">بیشتر درباره فانوس بدانید</a>
-          <a href="#portfolio">عکس ها</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#about">درباره ما</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#contact">ارتباط با ما</a>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "b yekan";
+            src: url("../css/font-awesome/BYekan.ttf") format("TrueType");
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Align vertically */
+        }
+        .navbar-brand {
+            font-family: "b yekan";
+            font-size: 2rem;
+            font-weight: bold;
+            color: black;
+            margin: auto; /* Center horizontally in navbar */
+        }
+        .toggle-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 3rem; /* Bigger toggle button */
+            color: black;
+            margin-right: 10px; /* Add spacing on the right */
+        }
+        .nav-links {
+            display: flex;
+            flex-direction: row-reverse; /* RTL layout */
+            list-style: none;
+            padding: 0;
+        }
+        .nav-links li {
+            margin: 0 6%px; /* Add spacing between list items */
+        }
+        .navbar-collapse {
+            text-align: center; /* Center alignment for links */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Navbar header -->
+            <div class="navbar-header">
+                <!-- Three-bars Toggle Button -->
+                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nav-links" aria-expanded="false">
+                    &#9776; <!-- Three-bars icon -->
+                </button>
+                <!-- Centered Brand -->
+                <a class="navbar-brand" href="#page-top">فانوس</a>
+            </div>
+            <!-- Collapsible Content (Hidden by Default) -->
+            <div class="collapse navbar-collapse" id="nav-links">
+                <ul class="nav-links">
+                    <li><a href="#portfolio">غرفه‌ها</a></li>
+                    <li><a href="#about">بیشتر درباره فانوس بدانید</a></li>
+                    <li><a href="#portfolio">عکس ها</a></li>
+                    <li><a href="#about">درباره ما</a></li>
+                    <li><a href="#contact">ارتباط با ما</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
