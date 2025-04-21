@@ -26,16 +26,17 @@
     }
     .navbar-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: flex-start; /* Align header content to the start */
+      position: relative;
     }
     .navbar-toggle {
       color: white;
       border: none;
       font-size: 120%;
-      margin: 0;
-      display: flex;
-      align-items: center;
+      position: absolute;
+      left: 15px; /* Position the button completely on the right */
+      top: 50%;
+      transform: translateY(-50%);
     }
     .menu-container {
       margin-top: 70px; /* Ensure menu appears below navbar */
@@ -48,11 +49,11 @@
     <!-- Navbar Header -->
     <div class="navbar-header">
       <!-- Menu Toggle Button -->
-      <button type="button" class="btn btn-default navbar-toggle" onclick="toggleMenu()" style="position: relative;">
+      <button type="button" class="btn btn-default navbar-toggle" onclick="toggleMenu()">
         <span class="glyphicon glyphicon-menu-hamburger"></span> <!-- Three-bars icon -->
       </button>
       <!-- Navbar Brand -->
-      <a class="navbar-brand" href="#page-top">فانوس</a>
+      <a class="navbar-brand text-center" href="#page-top">فانوس</a>
     </div>
   </div>
 </nav>
