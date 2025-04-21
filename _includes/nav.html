@@ -127,6 +127,15 @@
     menu.style.top = navbarBottom + "px"; // Position menu just below the navbar
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
+
+  // Close the menu when clicking anywhere on the page
+  document.addEventListener("click", function (event) {
+    var menu = document.getElementById("menu-items");
+    var toggleButton = document.querySelector(".navbar-toggle");
+    if (menu.style.display === "block" && !menu.contains(event.target) && event.target !== toggleButton) {
+      menu.style.display = "none"; // Hide the menu
+    }
+  });
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
